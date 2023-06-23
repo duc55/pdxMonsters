@@ -105,11 +105,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1289803513178295359, guid: 9d1f81ea281ba1349ad00d5978c08d51, type: 3}
       propertyPath: m_Name
-      value: Enemy_1
+      value: Enemy_2
       objectReference: {fileID: 0}
     - target: {fileID: 1289803514599094096, guid: 9d1f81ea281ba1349ad00d5978c08d51, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 76e9ee285e48002409e3883f4d8211d1, type: 3}
+      objectReference: {fileID: 21300000, guid: 4549b944b8016c24887544f6945ca88c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d1f81ea281ba1349ad00d5978c08d51, type: 3}
