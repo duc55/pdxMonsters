@@ -7,19 +7,29 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private int currentHp;
-    [SerializeField] private int maxHp;
-    [SerializeField] private int goldToGive;
+
+    [SerializeField] private EnemyData data;
 
     [Header("Components")]
+    [SerializeField] private Image enemyButtonImage;
     [SerializeField] private Image healthBarFill;
     [SerializeField] private Animation anim;
 
     public event Action OnDefeated;
 
+    public void SetData(EnemyData data)
+    {
+        this.data = data;
+
+        currentHp = data.maxHp;
+        enemyButtonImage.sprite = data.sprite;
+
+    }
+    
     public void Damage(int amount)
     {
-        currentHp = Mathf.Clamp(currentHp - amount, 0, maxHp);
-        healthBarFill.fillAmount = (float)currentHp / (float)maxHp;
+        currentHp = Mathf.Clamp(currentHp - amount, 0, data.maxHp);
+        healthBarFill.fillAmount = (float)currentHp / (float)data.maxHp;
 
         anim.Stop();
         anim.Play();
@@ -29,10 +39,10 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void Defeated()
+    private void Defeated()
     {
         OnDefeated?.Invoke();
-        GameManager.Instance.AddGold(goldToGive);
+        GameManager.Instance.AddGold(data.goldToGive);
         EnemyManager.Instance.DefeatEnemy(gameObject);
     }
 }

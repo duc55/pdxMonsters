@@ -69,7 +69,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7880d1ea56c95064aa5956b95b2be4fe, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 40a7077b6dd1b574f8ca266f044d8613, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 1600851737129651159}
   - component: {fileID: 1600851737129651158}
   m_Layer: 5
-  m_Name: Enemy_0
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -293,9 +293,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca85c01cbcf12ff4f9f622a5af8a29d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHp: 10
-  maxHp: 10
-  goldToGive: 1
+  currentHp: 3
+  data: {fileID: 0}
+  enemyButtonImage: {fileID: 1600851735845253311}
   healthBarFill: {fileID: 1600851736683690120}
   anim: {fileID: 4170143036092324792}
 --- !u!1 &1600851737178592033

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
@@ -9,7 +10,8 @@ public class EnemyManager : MonoBehaviour
 
     [field: SerializeField] public Enemy CurrentEnemy { get; private set; }
 
-    [SerializeField] private GameObject[] enemyPrefabs;
+    [SerializeField] private Enemy enemyPrefab;
+    [SerializeField] private EnemyData[] enemies;
 
     [Header("Components")]
     [SerializeField] private Transform canvas;
@@ -24,13 +26,17 @@ public class EnemyManager : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        CreateNewEnemy();
+    }
+
     public void CreateNewEnemy()
     {
-        GameObject enemyToSpawn = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
-
-        GameObject obj = Instantiate(enemyToSpawn, canvas);
-
-        CurrentEnemy = obj.GetComponent<Enemy>();
+        EnemyData enemyData = enemies[Random.Range(0, enemies.Length)];
+        Enemy enemy = Instantiate(enemyPrefab, canvas);
+        enemy.SetData(enemyData);
+        CurrentEnemy = enemy;
     }
 
     public void DefeatEnemy(GameObject enemy)
