@@ -6,16 +6,18 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public int gold;
+    public static GameManager Instance;
 
-    [SerializeField] TextMeshProUGUI goldText;
+    [field: SerializeField] public int Gold { get; private set; } = 0;
 
-    public Sprite[] backgrounds;
+    [SerializeField] private Sprite[] backgrounds;
+
+    [Header("Components")]
+    [SerializeField] private TextMeshProUGUI goldText;
+    [SerializeField] private Image backgroundImage;
+
     private int currentBackground;
     private int enemiesUntilBackgroundChange;
-    public Image backgroundImage;
-
-    public static GameManager Instance;
 
     private void Awake()
     {
@@ -25,14 +27,14 @@ public class GameManager : MonoBehaviour
 
     public void AddGold(int amount) 
     {
-        gold += amount;
-        goldText.text = "Gold: " + gold.ToString();
+        Gold += amount;
+        goldText.text = "Gold: " + Gold.ToString();
     }
 
     public void TakeGold(int amount) 
     {
-        gold -= amount;
-        goldText.text = "Gold: " + gold.ToString();
+        Gold -= amount;
+        goldText.text = "Gold: " + Gold.ToString();
     }
 
     public void BackgroundCheck()

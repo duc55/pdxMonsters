@@ -5,24 +5,27 @@ using TMPro;
 
 public class ClickManager : MonoBehaviour
 {
-    public List<float> autoClickersLastTime = new List<float>();
-    public int autoClickerPrice = 10;
+    [SerializeField] private List<float> autoClickersLastTime = new List<float>();
+    [SerializeField] private int autoClickerPrice = 10;
 
-    public TextMeshProUGUI quantityText;
+    [Header("Components")]
+    [SerializeField] private TextMeshProUGUI quantityText;
 
     private void Update()
     {
         for (int i = 0; i < autoClickersLastTime.Count; i++) {
             if (Time.time - autoClickersLastTime[i] >= 1.0f) {
                 autoClickersLastTime[i] = Time.time;
-                EnemyManager.Instance.currentEnemy.Damage();
+
+                int damage = 1;
+                EnemyManager.Instance.CurrentEnemy.Damage(damage);
             }
         }
     }
 
     public void OnBuyAutoClicker()
     {
-        if (GameManager.Instance.gold >= autoClickerPrice) {
+        if (GameManager.Instance.Gold >= autoClickerPrice) {
             GameManager.Instance.TakeGold(autoClickerPrice);
             autoClickersLastTime.Add(Time.time);
 
