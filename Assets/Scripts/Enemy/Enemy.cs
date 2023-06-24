@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Enemy : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Image enemyButtonImage;
     [SerializeField] private Image healthBarFill;
     [SerializeField] private Animation anim;
+    [SerializeField] private TextMeshProUGUI nameText;
 
     public event Action OnDefeated;
 
@@ -24,6 +26,7 @@ public class Enemy : MonoBehaviour
         currentHp = data.maxHp;
         enemyButtonImage.sprite = data.sprite;
 
+        nameText.text = data.enemyName;
     }
     
     public void Damage(int amount)

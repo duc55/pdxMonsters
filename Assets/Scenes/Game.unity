@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <CurrentEnemy>k__BackingField: {fileID: 0}
-  enemyPrefab: {fileID: 1600851737129651158, guid: 78be83b171a731847bded23b8e148b3a, type: 3}
+  enemyPrefab: {fileID: 6654641764049166579, guid: 78be83b171a731847bded23b8e148b3a, type: 3}
   enemies:
   - {fileID: 11400000, guid: a962cd698579e0d43bb59b524c3bd742, type: 2}
   - {fileID: 11400000, guid: 1903d0521b3460a48bc4a3197c737ca9, type: 2}
