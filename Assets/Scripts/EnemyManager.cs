@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Unity.VisualScripting;
 using UnityEngine;
+
+using Random = UnityEngine.Random;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -15,6 +18,8 @@ public class EnemyManager : MonoBehaviour
 
     [Header("Components")]
     [SerializeField] private Transform canvas;
+
+    public event Action<int> OnEnemyDefeated;
 
     private void Awake()
     {
@@ -31,20 +36,36 @@ public class EnemyManager : MonoBehaviour
         CreateNewEnemy();
     }
 
-    public void CreateNewEnemy()
+    private void DefeatEnemy(Enemy enemy)
+    {
+        enemy.OnDefeated -= Enemy_OnDefeated;
+        Destroy(enemy.gameObject);
+        CurrentEnemy = null;
+
+        OnEnemyDefeated?.Invoke(enemy.GetGoldToGive());
+
+        GameManager.Instance.BackgroundCheck();
+    }
+
+    private void Enemy_OnDefeated()
+    {
+        DefeatEnemy(CurrentEnemy);
+        StartCoroutine(SpawnEnemy());
+    }
+
+    private IEnumerator SpawnEnemy()
+    {
+        float timeBeforeRespawning = 1.0f;
+        yield return new WaitForSeconds(timeBeforeRespawning);
+        CreateNewEnemy();
+    }
+
+    private void CreateNewEnemy()
     {
         EnemyData enemyData = enemies[Random.Range(0, enemies.Length)];
         Enemy enemy = Instantiate(enemyPrefab, canvas);
         enemy.SetData(enemyData);
+        enemy.OnDefeated += Enemy_OnDefeated;
         CurrentEnemy = enemy;
-    }
-
-    public void DefeatEnemy(GameObject enemy)
-    {
-        Destroy(enemy);
-
-        CreateNewEnemy();
-
-        GameManager.Instance.BackgroundCheck();
     }
 }

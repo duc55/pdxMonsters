@@ -28,6 +28,8 @@ public class Enemy : MonoBehaviour
     
     public void Damage(int amount)
     {
+        if (currentHp <= 0) return;
+
         currentHp = Mathf.Clamp(currentHp - amount, 0, data.maxHp);
         healthBarFill.fillAmount = (float)currentHp / (float)data.maxHp;
 
@@ -39,10 +41,13 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public int GetGoldToGive() 
+    {
+        return data.goldToGive;
+    }
+
     private void Defeated()
     {
         OnDefeated?.Invoke();
-        GameManager.Instance.AddGold(data.goldToGive);
-        EnemyManager.Instance.DefeatEnemy(gameObject);
     }
 }

@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     [Header("Components")]
     [SerializeField] private TextMeshProUGUI goldText;
     [SerializeField] private Image backgroundImage;
+    [SerializeField] private EnemyManager enemyManager;
 
     private int currentBackground;
     private int enemiesUntilBackgroundChange;
@@ -23,6 +24,16 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
         enemiesUntilBackgroundChange = 5;
+    }
+
+    private void OnEnable()
+    {
+        enemyManager.OnEnemyDefeated += AddGold;
+    }
+
+    private void OnDisable()
+    {
+        enemyManager.OnEnemyDefeated -= AddGold;
     }
 
     public void AddGold(int amount) 
