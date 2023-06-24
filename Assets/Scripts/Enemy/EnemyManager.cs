@@ -17,7 +17,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private EnemyData[] enemies;
 
     [Header("Components")]
-    [SerializeField] private Transform canvas;
+    [SerializeField] private Transform enemyContainerTransform;
 
     public event Action<int> OnEnemyDefeated;
 
@@ -47,12 +47,6 @@ public class EnemyManager : MonoBehaviour
         GameManager.Instance.BackgroundCheck();
     }
 
-    private void Enemy_OnDefeated()
-    {
-        DefeatEnemy(CurrentEnemy);
-        StartCoroutine(SpawnEnemy());
-    }
-
     private IEnumerator SpawnEnemy()
     {
         float timeBeforeRespawning = 1.0f;
@@ -63,9 +57,15 @@ public class EnemyManager : MonoBehaviour
     private void CreateNewEnemy()
     {
         EnemyData enemyData = enemies[Random.Range(0, enemies.Length)];
-        Enemy enemy = Instantiate(enemyPrefab, canvas);
+        Enemy enemy = Instantiate(enemyPrefab, enemyContainerTransform);
         enemy.SetData(enemyData);
         enemy.OnDefeated += Enemy_OnDefeated;
         CurrentEnemy = enemy;
+    }
+
+    private void Enemy_OnDefeated()
+    {
+        DefeatEnemy(CurrentEnemy);
+        StartCoroutine(SpawnEnemy());
     }
 }

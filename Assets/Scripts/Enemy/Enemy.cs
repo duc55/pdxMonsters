@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private int currentHp;
-
     [SerializeField] private EnemyData data;
+
+    [SerializeField] private int currentHp;
 
     [Header("Components")]
     [SerializeField] private Image enemyButtonImage;

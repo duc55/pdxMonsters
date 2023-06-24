@@ -32,6 +32,8 @@ public class ClickManager : MonoBehaviour
             autoClickersLastTime.Add(Time.time);
 
             quantityText.text = "x " + autoClickersLastTime.Count.ToString();
+
+            PetManager.Instance.SpawnPet();
         }
     }
 }

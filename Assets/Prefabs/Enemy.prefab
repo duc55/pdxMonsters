@@ -274,11 +274,11 @@ RectTransform:
   - {fileID: 1600851735845253304}
   - {fileID: 1600851737178592032}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -100}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -400, y: -100}
   m_SizeDelta: {x: 500, y: 580}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1600851737129651158
@@ -293,8 +293,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca85c01cbcf12ff4f9f622a5af8a29d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHp: 3
   data: {fileID: 0}
+  currentHp: 3
   enemyButtonImage: {fileID: 1600851735845253311}
   healthBarFill: {fileID: 1600851736683690120}
   anim: {fileID: 4170143036092324792}
