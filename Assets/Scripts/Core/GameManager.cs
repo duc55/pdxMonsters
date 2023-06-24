@@ -22,7 +22,13 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance != null) {
+            Debug.LogWarning($"There can only be one GameManager in the scene.");
+            Destroy(gameObject);
+            return;
+        }
         Instance = this;
+
         enemiesUntilBackgroundChange = 5;
     }
 
@@ -39,13 +45,13 @@ public class GameManager : MonoBehaviour
     public void AddGold(int amount) 
     {
         Gold += amount;
-        goldText.text = "Gold: " + Gold.ToString();
+        UpdateGoldText();
     }
 
     public void TakeGold(int amount) 
     {
         Gold -= amount;
-        goldText.text = "Gold: " + Gold.ToString();
+        UpdateGoldText();
     }
 
     public void BackgroundCheck()
@@ -61,5 +67,10 @@ public class GameManager : MonoBehaviour
 
             backgroundImage.sprite = backgrounds[currentBackground];
         }
+    }
+
+    private void UpdateGoldText()
+    {
+        goldText.text = Gold.ToString();
     }
 }
