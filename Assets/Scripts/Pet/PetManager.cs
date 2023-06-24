@@ -54,6 +54,6 @@ public class PetManager : MonoBehaviour
     {
         int currentPetCount = petContainerTransform.childCount;
         currentPetPrice = startingPetPrice + currentPetCount * startingPetPrice;
-        hireButtonText.text = "Hire Pet<br>(" + currentPetPrice.ToString() + " Gold)";
+        hireButtonText.text = "<b>Hire Pet</b><br>(" + currentPetPrice.ToString() + " Gold)";
     }
 }
