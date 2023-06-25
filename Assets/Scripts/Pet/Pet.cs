@@ -8,17 +8,17 @@ public class Pet : MonoBehaviour
 {
     [SerializeField] private PetData data;
 
-    private int attackPower = 1;
-    private float timeBetweenAttacks = 1.0f;
-    private float lastAttackTime;
-
     [Header("Components")]
     [SerializeField] private Image petImage;
     [SerializeField] private Animation anim;
 
+    private float lastAttackTime;
+    private int attackPowerLevel = 0;
+    private int attackSpeedLevel = 0;
+
     private void Update()
     {
-        if (Time.time - lastAttackTime >= 1.0f) {
+        if (Time.time - lastAttackTime >= data.GetTimeBetweenAttacks(attackSpeedLevel)) {
             lastAttackTime = Time.time;
 
             if (EnemyManager.Instance.CurrentEnemy == null) return;
@@ -31,8 +31,6 @@ public class Pet : MonoBehaviour
     {
         this.data = data;
 
-        attackPower = data.attackPower;
-        timeBetweenAttacks = data.timeBetweenAttacks;
         petImage.sprite = data.sprite;
     }
 
@@ -41,6 +39,6 @@ public class Pet : MonoBehaviour
         anim.Stop();
         anim.Play();
 
-        EnemyManager.Instance.CurrentEnemy.Damage(attackPower);
+        EnemyManager.Instance.CurrentEnemy.Damage(data.GetAttackPower(attackPowerLevel));
     }
 }

@@ -9,5 +9,16 @@ public class PetData : ScriptableObject
     public string description;
     public int attackPower;
     public float timeBetweenAttacks;
+    public float statScaleFactor = 1.0f;
     public Sprite sprite;
+
+    public int GetAttackPower(int level) 
+    {
+        return Mathf.RoundToInt(attackPower + attackPower * level * statScaleFactor);
+    }
+
+    public float GetTimeBetweenAttacks(int level) 
+    {
+        return timeBetweenAttacks + timeBetweenAttacks * level * statScaleFactor;
+    }
 }
