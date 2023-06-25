@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acd3419e2972c1e4191aa3738aa56064, type: 3}
-  m_Name: Ladybug
+  m_Name: Gumberoo
   m_EditorClassIdentifier: 
-  enemyName: Ladybug
-  maxHp: 10
+  enemyName: Gumberoo
+  maxHp: 15
   goldToGive: 2
-  sprite: {fileID: 21300000, guid: b2559fc103f8c384b9ed481e58aa1591, type: 3}
+  sprite: {fileID: 21300000, guid: fb5a24b52b057b34c92871c8b5d3ff8a, type: 3}

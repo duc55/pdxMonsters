@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acd3419e2972c1e4191aa3738aa56064, type: 3}
-  m_Name: Snail
+  m_Name: Sasquatch
   m_EditorClassIdentifier: 
-  enemyName: Snail
+  enemyName: Sasquatch
   maxHp: 15
   goldToGive: 2
-  sprite: {fileID: 21300000, guid: 216ca5187dfb554468f2b09ebc03d650, type: 3}
+  sprite: {fileID: 21300000, guid: 217166e133e96a04bba8580e11c129bf, type: 3}

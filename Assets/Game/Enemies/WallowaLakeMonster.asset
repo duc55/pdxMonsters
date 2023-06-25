@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acd3419e2972c1e4191aa3738aa56064, type: 3}
-  m_Name: Barnacle
+  m_Name: WallowaLakeMonster
   m_EditorClassIdentifier: 
-  enemyName: Barnacle
-  maxHp: 10
-  goldToGive: 1
-  sprite: {fileID: 21300000, guid: 7880d1ea56c95064aa5956b95b2be4fe, type: 3}
+  enemyName: Wallowa Lake Monster
+  maxHp: 18
+  goldToGive: 3
+  sprite: {fileID: 21300000, guid: a501b9e0654423a4988b632822e3785d, type: 3}

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acd3419e2972c1e4191aa3738aa56064, type: 3}
-  m_Name: Bat
+  m_Name: Thunderbird
   m_EditorClassIdentifier: 
-  enemyName: Bat
-  maxHp: 7
-  goldToGive: 1
-  sprite: {fileID: 21300000, guid: 673a994614727dc4f8426b20b918f0c6, type: 3}
+  enemyName: Thunderbird
+  maxHp: 20
+  goldToGive: 3
+  sprite: {fileID: 21300000, guid: d6cad4fe30a95954593b845ba07d450c, type: 3}

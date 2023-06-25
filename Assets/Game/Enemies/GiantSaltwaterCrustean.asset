@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acd3419e2972c1e4191aa3738aa56064, type: 3}
-  m_Name: SlimeBlock
+  m_Name: GiantSaltwaterCrustean
   m_EditorClassIdentifier: 
-  enemyName: Slime Block
+  enemyName: Giant Saltwater Crustacean
   maxHp: 20
   goldToGive: 3
-  sprite: {fileID: 21300000, guid: de5840d5b18422243a262e21b8d578ab, type: 3}
+  sprite: {fileID: 21300000, guid: 63f5c2b9e47d5c745be22665a125e8c0, type: 3}

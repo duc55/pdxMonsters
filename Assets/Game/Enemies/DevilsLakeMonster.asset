@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd3419e2972c1e4191aa3738aa56064, type: 3}
+  m_Name: DevilsLakeMonster
+  m_EditorClassIdentifier: 
+  enemyName: Devils Lake Monster
+  maxHp: 18
+  goldToGive: 3
+  sprite: {fileID: 21300000, guid: b4e95bfeac3a4b84b8a3c7150392d239, type: 3}

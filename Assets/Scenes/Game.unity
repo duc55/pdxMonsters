@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 275957301}
   - component: {fileID: 275957299}
   - component: {fileID: 275957303}
+  - component: {fileID: 275957304}
   m_Layer: 0
   m_Name: _GameManager
   m_TagString: Untagged
@@ -168,6 +169,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cbc1ebdb14517184599690f0b46ff6de, type: 2}
   - {fileID: 11400000, guid: c1a4778fad1f9e747b8307ededd9b9b5, type: 2}
   - {fileID: 11400000, guid: d4371617e70c76644be5ee560fd23b2f, type: 2}
+  - {fileID: 11400000, guid: 43a7a701f07e2db4dac0d305fb8afa35, type: 2}
+  - {fileID: 11400000, guid: 6504e657510ce334f9eb7b1a754a9e84, type: 2}
+  - {fileID: 11400000, guid: 39e8e74c871a6d8469b30366ae4f28a8, type: 2}
+  - {fileID: 11400000, guid: ab118fae06b0aab41a1afad277843869, type: 2}
+  - {fileID: 11400000, guid: bd78d96f66a56354cb8e9dbfb6c3a2b7, type: 2}
+  - {fileID: 11400000, guid: a41b6143a85f8164f96591e410309ce5, type: 2}
+  - {fileID: 11400000, guid: c444e90b7f83f1c4da69d927b9749db8, type: 2}
+  - {fileID: 11400000, guid: c296f15be6467f04ab1f2defa8fec006, type: 2}
   enemyContainerTransform: {fileID: 1458962510}
 --- !u!4 &275957300
 Transform:
@@ -256,6 +265,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e79367be34e159648873b9d15b34a52c, type: 2}
   petContainerTransform: {fileID: 2032842554}
   hireButtonText: {fileID: 1068919569}
+--- !u!114 &275957304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275957298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a16276bfc38f71048b49b42e45dfff3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &420009046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1268,7 +1289,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.2509804}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1312,7 +1333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.1981132, g: 0.1981132, b: 0.1981132, a: 0.40392157}
+  m_Color: {r: 0, g: 0.32325163, b: 0.6226415, a: 0.40392157}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
