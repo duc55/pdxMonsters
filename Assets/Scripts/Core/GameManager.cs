@@ -10,15 +10,9 @@ public class GameManager : MonoBehaviour
 
     [field: SerializeField] public int Gold { get; private set; } = 0;
 
-    [SerializeField] private Sprite[] backgrounds;
-
     [Header("Components")]
     [SerializeField] private TextMeshProUGUI goldText;
-    [SerializeField] private Image backgroundImage;
     [SerializeField] private EnemyManager enemyManager;
-
-    private int currentBackground;
-    private int enemiesUntilBackgroundChange;
 
     private void Awake()
     {
@@ -28,18 +22,16 @@ public class GameManager : MonoBehaviour
             return;
         }
         Instance = this;
-
-        enemiesUntilBackgroundChange = 5;
     }
 
     private void OnEnable()
     {
-        enemyManager.OnEnemyDefeated += AddGold;
+        enemyManager.OnEnemyDefeated += EnemyManager_OnEnemyDefeated;
     }
 
     private void OnDisable()
     {
-        enemyManager.OnEnemyDefeated -= AddGold;
+        enemyManager.OnEnemyDefeated -= EnemyManager_OnEnemyDefeated;
     }
 
     public void AddGold(int amount) 
@@ -54,23 +46,14 @@ public class GameManager : MonoBehaviour
         UpdateGoldText();
     }
 
-    public void BackgroundCheck()
-    {
-        enemiesUntilBackgroundChange--;
-        if (enemiesUntilBackgroundChange == 0) {
-            enemiesUntilBackgroundChange = 5;
-            currentBackground++;
-
-            if (currentBackground == backgrounds.Length) {
-                currentBackground = 0;
-            }
-
-            backgroundImage.sprite = backgrounds[currentBackground];
-        }
-    }
-
     private void UpdateGoldText()
     {
         goldText.text = Gold.ToString();
+    }
+
+    private void EnemyManager_OnEnemyDefeated(int goldDropped)
+    {
+        AddGold(goldDropped);
+        BackgroundManager.Instance.BackgroundCheck();
     }
 }

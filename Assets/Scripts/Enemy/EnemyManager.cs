@@ -43,8 +43,6 @@ public class EnemyManager : MonoBehaviour
         CurrentEnemy = null;
 
         OnEnemyDefeated?.Invoke(enemy.GetGoldToGive());
-
-        GameManager.Instance.BackgroundCheck();
     }
 
     private IEnumerator SpawnEnemy()
