@@ -15,4 +15,5 @@ MonoBehaviour:
   enemyName: Black-eyed Children
   maxHp: 7
   goldToGive: 1
+  statScaleFactor: 1
   sprite: {fileID: 21300000, guid: 08fb28e6112c30940a0be6fec1810cf7, type: 3}

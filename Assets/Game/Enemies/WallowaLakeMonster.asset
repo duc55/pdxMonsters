@@ -15,4 +15,5 @@ MonoBehaviour:
   enemyName: Wallowa Lake Monster
   maxHp: 18
   goldToGive: 3
+  statScaleFactor: 1
   sprite: {fileID: 21300000, guid: a501b9e0654423a4988b632822e3785d, type: 3}

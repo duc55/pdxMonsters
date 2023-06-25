@@ -15,4 +15,5 @@ MonoBehaviour:
   enemyName: Amhuluk
   maxHp: 13
   goldToGive: 2
+  statScaleFactor: 1
   sprite: {fileID: 21300000, guid: e12a838412131d64e941e17511c79cd2, type: 3}

@@ -15,4 +15,5 @@ MonoBehaviour:
   enemyName: Sasquatch
   maxHp: 15
   goldToGive: 2
+  statScaleFactor: 1
   sprite: {fileID: 21300000, guid: 217166e133e96a04bba8580e11c129bf, type: 3}

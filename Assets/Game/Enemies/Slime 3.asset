@@ -15,4 +15,5 @@ MonoBehaviour:
   enemyName: Slime Block
   maxHp: 9
   goldToGive: 1
+  statScaleFactor: 1
   sprite: {fileID: 21300000, guid: de5840d5b18422243a262e21b8d578ab, type: 3}

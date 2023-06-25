@@ -15,4 +15,5 @@ MonoBehaviour:
   enemyName: Gumberoo
   maxHp: 15
   goldToGive: 2
+  statScaleFactor: 1
   sprite: {fileID: 21300000, guid: fb5a24b52b057b34c92871c8b5d3ff8a, type: 3}
