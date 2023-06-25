@@ -8,11 +8,16 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [field: SerializeField] public int Gold { get; private set; } = 0;
+    public int Gold { get; private set; } = 0;
+    public int CurrentLevel { get; private set; } = 0;
+
+    [SerializeField] int enemiesPerLevel = 15;
 
     [Header("Components")]
     [SerializeField] private TextMeshProUGUI goldText;
     [SerializeField] private EnemyManager enemyManager;
+
+    private int enemiesDefeated = 0;
 
     private void Awake()
     {
@@ -55,5 +60,11 @@ public class GameManager : MonoBehaviour
     {
         AddGold(goldDropped);
         BackgroundManager.Instance.BackgroundCheck();
+
+        enemiesDefeated++;
+
+        if (enemiesDefeated % enemiesPerLevel == 0) {
+            CurrentLevel++;
+        } 
     }
 }

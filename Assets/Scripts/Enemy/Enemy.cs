@@ -9,13 +9,13 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private EnemyData data;
 
-    [SerializeField] private int currentHp;
-
     [Header("Components")]
     [SerializeField] private Image enemyButtonImage;
     [SerializeField] private Image healthBarFill;
     [SerializeField] private Animation anim;
     [SerializeField] private TextMeshProUGUI nameText;
+    
+    private int currentHp;
 
     public event Action OnDefeated;
 
@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
     {
         this.data = data;
 
-        currentHp = data.maxHp;
+        currentHp = data.GetMaxHp(GameManager.Instance.CurrentLevel);
         enemyButtonImage.sprite = data.sprite;
 
         nameText.text = data.enemyName;
@@ -33,8 +33,8 @@ public class Enemy : MonoBehaviour
     {
         if (currentHp <= 0) return;
 
-        currentHp = Mathf.Clamp(currentHp - amount, 0, data.maxHp);
-        healthBarFill.fillAmount = (float)currentHp / (float)data.maxHp;
+        currentHp = Mathf.Clamp(currentHp - amount, 0, data.GetMaxHp(GameManager.Instance.CurrentLevel));
+        healthBarFill.fillAmount = (float)currentHp / (float)data.GetMaxHp(GameManager.Instance.CurrentLevel);
 
         anim.Stop();
         anim.Play();
@@ -46,7 +46,7 @@ public class Enemy : MonoBehaviour
 
     public int GetGoldToGive() 
     {
-        return data.goldToGive;
+        return data.GetGoldToGive(GameManager.Instance.CurrentLevel);
     }
 
     private void Defeated()

@@ -11,7 +11,7 @@ public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager Instance;
 
-    [field: SerializeField] public Enemy CurrentEnemy { get; private set; }
+    public Enemy CurrentEnemy { get; private set; }
 
     [SerializeField] private Enemy enemyPrefab;
     [SerializeField] private EnemyData[] enemies;
