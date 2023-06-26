@@ -18,7 +18,7 @@ public class Pet : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time - lastAttackTime >= data.GetTimeBetweenAttacks(attackSpeedLevel)) {
+        if (Time.time - lastAttackTime >= GetTimeBetweenAttacks()) {
             lastAttackTime = Time.time;
 
             if (EnemyManager.Instance.CurrentEnemy == null) return;
@@ -34,11 +34,53 @@ public class Pet : MonoBehaviour
         petImage.sprite = data.sprite;
     }
 
+    public void ShowInfo()
+    {
+        PetInfoManager.Instance.ShowPetInfo(this);
+    }
+
+    public string GetPetName()
+    {
+        return data.petName;
+    }
+
+    public int GetAttackPower()
+    {
+        return data.GetAttackPower(attackPowerLevel);
+    }
+
+    public float GetTimeBetweenAttacks()
+    {
+        return data.GetTimeBetweenAttacks(attackSpeedLevel);
+    }
+
+    public int GetPowerUpCost()
+    {
+        const int baseCost = 10;
+        return (attackPowerLevel + 1) * baseCost;
+    }
+
+    public int GetSpeedUpCost()
+    {
+        const int baseCost = 15;
+        return (attackSpeedLevel + 1) * baseCost;
+    }
+
+    public void LevelUpPower()
+    {
+        attackPowerLevel++;
+    }
+
+    public void LevelUpSpeed()
+    {
+        attackSpeedLevel++;
+    }
+
     private void Attack()
     {
         anim.Stop();
         anim.Play();
 
-        EnemyManager.Instance.CurrentEnemy.Damage(data.GetAttackPower(attackPowerLevel));
+        EnemyManager.Instance.CurrentEnemy.Damage(GetAttackPower());
     }
 }

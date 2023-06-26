@@ -19,6 +19,7 @@ public class PetData : ScriptableObject
 
     public float GetTimeBetweenAttacks(int level) 
     {
-        return timeBetweenAttacks + timeBetweenAttacks * level * statScaleFactor;
+        const float reductionPerLevel = 0.25f;
+        return timeBetweenAttacks - timeBetweenAttacks * level * statScaleFactor * reductionPerLevel;
     }
 }
