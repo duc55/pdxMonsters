@@ -9,6 +9,7 @@ public class BuyPetButton : MonoBehaviour
     [Header("Components")]
     [SerializeField] private Image petIcon;
     [SerializeField] private Button buyButton;
+    [SerializeField] private HoverTip hoverTip;
 
     private PetData data;
 
@@ -26,6 +27,8 @@ public class BuyPetButton : MonoBehaviour
         this.data = data;
 
         petIcon.sprite = data.icon;
+        string tip = String.Format("<b>{0}</b>: {1}", data.petName, data.description);
+        hoverTip.SetTip(tip);
     }
 
     public void BuyPet()

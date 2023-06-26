@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8678084428489166895}
   - component: {fileID: 2419069057023471721}
   - component: {fileID: 4987974499591932827}
+  - component: {fileID: 6669472196473658717}
   m_Layer: 5
   m_Name: BuyPetButton
   m_TagString: Untagged
@@ -148,3 +149,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   petIcon: {fileID: 8678084428489166895}
   buyButton: {fileID: 2419069057023471721}
+  hoverTip: {fileID: 6669472196473658717}
+--- !u!114 &6669472196473658717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759714813655424080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 933760c236fed1e47b01156441643901, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipToShow: Hire this pet

@@ -60,6 +60,8 @@ public class PetStoreManager : MonoBehaviour
 
         containerTransform.gameObject.SetActive(false);
 
+        HoverTipManager.OnMouseLoseFocus();
+
         OnStoreClosed?.Invoke();
     }
 
