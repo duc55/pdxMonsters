@@ -17,7 +17,7 @@ public class PetStoreManager : MonoBehaviour
     private void Awake()
     {
         if (Instance != null) {
-            Debug.LogWarning($"There can only be one PetManager in the scene.");
+            Debug.LogWarning($"There can only be one PetStoreManager in the scene.");
             Destroy(gameObject);
             return;
         }

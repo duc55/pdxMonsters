@@ -34,14 +34,11 @@ public class PetManager : MonoBehaviour
     private void Start()
     {
         UpdatePetPrice();
-    }
 
-    private void OnEnable()
-    {
         PetStoreManager.Instance.OnStoreClosed += PetStoreManager_OnStoreClosed;
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         PetStoreManager.Instance.OnStoreClosed -= PetStoreManager_OnStoreClosed;
     }
@@ -53,7 +50,7 @@ public class PetManager : MonoBehaviour
 
             PetStoreManager.Instance.ShowStore();
 
-            UpdatePetPrice();
+            UpdatePetPrice(true);
             hireButton.interactable = false;
         }
     }
@@ -69,12 +66,12 @@ public class PetManager : MonoBehaviour
         return pets[Random.Range(0, pets.Length)];
     }
 
-    private void UpdatePetPrice()
+    private void UpdatePetPrice(bool hasPetInStore = false)
     {
         int currentPetCount = petContainerTransform.childCount;
         
         //Increase count if player is about to hire pet
-        if (PetStoreManager.Instance.IsStoreOpen()) {
+        if (hasPetInStore) {
             currentPetCount++;
         }
         
