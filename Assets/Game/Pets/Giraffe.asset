@@ -16,4 +16,6 @@ MonoBehaviour:
   description: a giraffe
   attackPower: 1
   timeBetweenAttacks: 1
+  statScaleFactor: 1
   sprite: {fileID: 21300000, guid: 12d8258374dffff4f9d92063a15d174f, type: 3}
+  icon: {fileID: 21300000, guid: 7d94055a37599304fa26e77cfca8c503, type: 3}

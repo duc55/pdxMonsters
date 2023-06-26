@@ -16,4 +16,6 @@ MonoBehaviour:
   description: a whale
   attackPower: 2
   timeBetweenAttacks: 2
+  statScaleFactor: 1
   sprite: {fileID: 21300000, guid: 3f336768d1768d74ca81568229838bdf, type: 3}
+  icon: {fileID: 21300000, guid: a25509fa6140a834592b2d5b69d3cf5c, type: 3}

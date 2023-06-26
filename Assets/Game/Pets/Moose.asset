@@ -16,4 +16,6 @@ MonoBehaviour:
   description: a moose
   attackPower: 2
   timeBetweenAttacks: 2
+  statScaleFactor: 1
   sprite: {fileID: 21300000, guid: c49ef720ca2b3ea41900b387344fb4b9, type: 3}
+  icon: {fileID: 21300000, guid: 40760b46421d02c4fa6f7d2c76f33971, type: 3}

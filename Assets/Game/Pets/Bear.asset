@@ -16,4 +16,6 @@ MonoBehaviour:
   description: Slow attack, but high damage
   attackPower: 3
   timeBetweenAttacks: 2
+  statScaleFactor: 1
   sprite: {fileID: 21300000, guid: 2eeda4495778a094ba2e6942dc9e9ba2, type: 3}
+  icon: {fileID: 21300000, guid: a496566cb73263b40b2b341b97c7c3e2, type: 3}

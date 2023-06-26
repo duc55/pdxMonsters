@@ -16,4 +16,6 @@ MonoBehaviour:
   description: a monkey
   attackPower: 1
   timeBetweenAttacks: 1
+  statScaleFactor: 1
   sprite: {fileID: 21300000, guid: d23de41ec7cf2af4d96b4352a69d3018, type: 3}
+  icon: {fileID: 21300000, guid: f737ea0f031de8d40b4be780bf19cb97, type: 3}

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class PetManager : MonoBehaviour
@@ -16,6 +17,7 @@ public class PetManager : MonoBehaviour
     [Header("Components")]
     [SerializeField] private Transform petContainerTransform;
     [SerializeField] private TextMeshProUGUI hireButtonText;
+    [SerializeField] private Button hireButton;
 
     private int currentPetPrice;
 
@@ -34,26 +36,54 @@ public class PetManager : MonoBehaviour
         UpdatePetPrice();
     }
 
-    public void TryToBuyPet()
+    private void OnEnable()
+    {
+        PetStoreManager.Instance.OnStoreClosed += PetStoreManager_OnStoreClosed;
+    }
+
+    private void OnDisable()
+    {
+        PetStoreManager.Instance.OnStoreClosed -= PetStoreManager_OnStoreClosed;
+    }
+
+    public void TryToOpenStore()
     {
         if (GameManager.Instance.Gold >= currentPetPrice) {
             GameManager.Instance.TakeGold(currentPetPrice);
-            SpawnPet();
+
+            PetStoreManager.Instance.ShowStore();
+
             UpdatePetPrice();
+            hireButton.interactable = false;
         }
     }
 
-    private void SpawnPet()
+    public void SpawnPet(PetData petData)
     {
-        PetData petData = pets[Random.Range(0, pets.Length)];
         Pet pet = Instantiate(petPrefab, petContainerTransform);
         pet.SetData(petData);
+    }
+
+    public PetData GetRandomPetData()
+    {
+        return pets[Random.Range(0, pets.Length)];
     }
 
     private void UpdatePetPrice()
     {
         int currentPetCount = petContainerTransform.childCount;
+        
+        //Increase count if player is about to hire pet
+        if (PetStoreManager.Instance.IsStoreOpen()) {
+            currentPetCount++;
+        }
+        
         currentPetPrice = startingPetPrice + currentPetCount * startingPetPrice;
         hireButtonText.text = "<b>Hire Pet</b><br>(" + currentPetPrice.ToString() + " Gold)";
+    }
+
+    private void PetStoreManager_OnStoreClosed()
+    {
+        hireButton.interactable = true;
     }
 }

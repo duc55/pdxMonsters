@@ -16,4 +16,6 @@ MonoBehaviour:
   description: a crocodile
   attackPower: 3
   timeBetweenAttacks: 3
+  statScaleFactor: 1
   sprite: {fileID: 21300000, guid: d8de381b3741b9648839b53f2ad5989c, type: 3}
+  icon: {fileID: 21300000, guid: 8abc543c000706b42ae04d25afe98eca, type: 3}

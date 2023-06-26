@@ -11,6 +11,7 @@ public class PetData : ScriptableObject
     public float timeBetweenAttacks;
     public float statScaleFactor = 1.0f;
     public Sprite sprite;
+    public Sprite icon;
 
     public int GetAttackPower(int level) 
     {
@@ -19,7 +20,8 @@ public class PetData : ScriptableObject
 
     public float GetTimeBetweenAttacks(int level) 
     {
-        const float reductionPerLevel = 0.25f;
-        return timeBetweenAttacks - timeBetweenAttacks * level * statScaleFactor * reductionPerLevel;
+        const float reductionPerLevel = 0.15f;
+        const float minAttackDelay = 0.01f;
+        return Mathf.Max(timeBetweenAttacks - timeBetweenAttacks * level * statScaleFactor * reductionPerLevel, minAttackDelay);
     }
 }

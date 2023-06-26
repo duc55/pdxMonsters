@@ -16,4 +16,6 @@ MonoBehaviour:
   description: a gorilla
   attackPower: 2
   timeBetweenAttacks: 2
+  statScaleFactor: 1
   sprite: {fileID: 21300000, guid: 61b6a7883148cec4780574a982bf5dd5, type: 3}
+  icon: {fileID: 21300000, guid: 0802628a00f40cd4e92907a7b7305af3, type: 3}

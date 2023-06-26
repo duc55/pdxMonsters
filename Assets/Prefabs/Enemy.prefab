@@ -130,7 +130,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 0}
-  currentHp: 3
   enemyButtonImage: {fileID: 2704519793427328589}
   healthBarFill: {fileID: 3195180795066081518}
   anim: {fileID: 5232138493910727130}

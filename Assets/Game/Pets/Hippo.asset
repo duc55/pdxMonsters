@@ -16,4 +16,6 @@ MonoBehaviour:
   description: a hippo
   attackPower: 3
   timeBetweenAttacks: 3
+  statScaleFactor: 1
   sprite: {fileID: 21300000, guid: ef0c838a25e327847979ce093d15c89a, type: 3}
+  icon: {fileID: 21300000, guid: d91b231389486e14abc0585fe40e9ae6, type: 3}

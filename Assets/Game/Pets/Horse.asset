@@ -16,4 +16,6 @@ MonoBehaviour:
   description: a horse
   attackPower: 3
   timeBetweenAttacks: 2
+  statScaleFactor: 1
   sprite: {fileID: 21300000, guid: 81b53c727295e134a9a6992605cb9c5f, type: 3}
+  icon: {fileID: 21300000, guid: ccd9cc6c3840e2c4a8937af46000b40f, type: 3}

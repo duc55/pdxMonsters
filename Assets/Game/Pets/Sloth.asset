@@ -16,4 +16,6 @@ MonoBehaviour:
   description: a sloth
   attackPower: 1
   timeBetweenAttacks: 2
+  statScaleFactor: 1
   sprite: {fileID: 21300000, guid: 1cfc9fe623ef001458608db0a3a6dc70, type: 3}
+  icon: {fileID: 21300000, guid: 79608ff85657e5b41ace31f4670f4d6f, type: 3}

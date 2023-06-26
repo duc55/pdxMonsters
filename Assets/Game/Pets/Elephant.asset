@@ -16,4 +16,6 @@ MonoBehaviour:
   description: an elephant
   attackPower: 2
   timeBetweenAttacks: 2
+  statScaleFactor: 1
   sprite: {fileID: 21300000, guid: bf8e78cb51a66d047b5c1244c3188f58, type: 3}
+  icon: {fileID: 21300000, guid: db1eec2d7d0af5749824ff4732ed74e0, type: 3}

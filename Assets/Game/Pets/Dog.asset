@@ -16,4 +16,6 @@ MonoBehaviour:
   description: Faithful friend
   attackPower: 1
   timeBetweenAttacks: 1
+  statScaleFactor: 1
   sprite: {fileID: 21300000, guid: 31d4c7857e44f9c459aa2826dca244cd, type: 3}
+  icon: {fileID: 21300000, guid: ac5e39fb1966c1d4b8900f768025ba23, type: 3}

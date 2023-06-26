@@ -16,4 +16,6 @@ MonoBehaviour:
   description: buffalo buffalo buffalo buffalo buffalo buffalo buffalo
   attackPower: 2
   timeBetweenAttacks: 2
+  statScaleFactor: 1
   sprite: {fileID: 21300000, guid: 119d04e5cc78218419ee27d810657224, type: 3}
+  icon: {fileID: 21300000, guid: 0c16c97fd6f4327439fc6db0407a8986, type: 3}
